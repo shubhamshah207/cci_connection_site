@@ -1,6 +1,6 @@
 # cci_connection_site
 
-## First Commit: 
+## First Step: 
 Course Standards for Web Page Design                                                                                       
 
 This assignment introduces the fundamental standards for web page design in the course. In this and all subsequent assignments, the following design standards apply.
