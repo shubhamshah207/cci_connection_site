@@ -1,0 +1,82 @@
+<%- include('../partials/htmlInit.ejs') %>
+    <title>Edit Connection</title>
+</head>
+<%- include('../partials/header.ejs')%>
+<%- include('./dateFormat.ejs')%>
+    <main>
+        <div class="row">
+        <form class="newconform" method="POST" action="/connections/<%= connection._id %>?_method=PUT">
+            <h2> New Connection form</h2>
+            <div class="thirtyper">
+                <label for="connectionTopic">Topic: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="connectionTopic" name="connectionTopic" placeholder="Topic.." value = "<%= connection.connectionTopic %>" required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="connectionName">Title: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="connectionName" value = "<%= connection.connectionName %>" name="connectionName" placeholder="connectionName.." required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="hostName">Host: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="hostName" value = "<%= connection.hostName %>" name="hostName" placeholder="Host" required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="details">Details: </label>
+            </div>
+            <div class="seventyper">
+                <textarea id="details" name="details" placeholder="Write something.." minlength="10" required><%= connection.details %></textarea>
+            </div>
+
+            <div class="thirtyper">
+                <label for="where">Where: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="where" name="where" value = "<%= connection.where %>"  placeholder="Location" required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="date">When: </label>
+            </div>
+            <div class="seventyper">
+                <input type="date" id="date" value = "<%= editdate(connection.date) %>" name="date" required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="startTime">Start: </label>
+            </div>
+            <div class="seventyper">
+                <input type="time" id="startTime" value = "<%= connection.startTime %>" name="startTime" value="12:00" required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="endTime">End: </label>
+            </div>
+            <div class="seventyper">
+                <input type="time" id="endTime"  value = "<%= connection.endTime %>" name="endTime" value="12:30" required>
+            </div>
+            
+
+            <div class="thirtyper">
+                <label for="imgUrl">Image Url: </label>
+            </div>
+            <div class="seventyper">
+                <input type="url" id="imgUrl" name="imgUrl" value = "<%= connection.imgUrl %>" placeholder="http://url" required>
+            </div>
+
+            <div>
+                <input type="submit" value="Update Connection">
+            </div>
+
+        </form>
+    </div>
+    </main>
+
+    <%- include('../partials/footer.ejs')%>

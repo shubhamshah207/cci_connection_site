@@ -1,0 +1,30 @@
+<%- include('../partials/htmlInit.ejs') %>
+    <title>Collection</title>
+</head>
+<%- include('../partials/header.ejs')%>
+<%- include('./dateFormat.ejs')%>
+    <main>
+        <section>
+            <article class="event-article">
+                <h2><%=connection.connectionName %></h2>
+                <figure>
+                    <img class="event-img" src="<%=connection.imgUrl %>" alt="<%=connection.connectionName %>">
+                </figure>
+                <div class="gap"></div>
+                <br>
+                <p><strong>Hosted by <%=connection.hostName %></strong></p>
+                <p><strong>Date:</strong> <%=viewdate(connection.date) %></p>
+                <p><strong>Time: </strong><%=connection.startTime %> to <%=connection.endTime %></p>
+                <p><strong>Where:</strong> <%=connection.where %></p>
+                <p><strong>Details:</strong> <%=connection.details %></p>
+            </article>
+            <aside>
+
+                <form>
+                    <button class="button" type='submit' formmethod="POST" formaction="/connections/<%= connection._id %>?_method=DELETE">Delete</button>
+                    <button class="button" type='submit' formmethod="GET" formaction="/connections/<%= connection._id %>/edit">Edit</button>
+                </form>
+            </aside>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs')%>

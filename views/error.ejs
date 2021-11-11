@@ -1,0 +1,14 @@
+<%- include('./partials/htmlInit.ejs') %>
+    <title>Error Page</title>
+</head>
+<%- include('./partials/header.ejs') %>
+    <main>
+        <section>
+            <h2 class="textAlignCentre"><%= error.status %> Error</h2>
+            <br>
+            <p>
+                <%= error.message %> 
+            </p>
+        </section>
+    </main>
+<%- include('./partials/footer.ejs') %>

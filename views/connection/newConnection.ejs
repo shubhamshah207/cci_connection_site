@@ -1,0 +1,81 @@
+<%- include('../partials/htmlInit.ejs') %>
+    <title>New Connection</title>
+</head>
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="row">
+        <form class="newconform" method="POST" action="/connections">
+            <h2> New Connection form</h2>
+            <div class="thirtyper">
+                <label for="connectionTopic">Topic: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="connectionTopic" name="connectionTopic" placeholder="Topic.." required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="connectionName">Title: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="connectionName" name="connectionName" placeholder="connectionName.." required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="hostName">Host: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="hostName" name="hostName" placeholder="Host" required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="details">Details: </label>
+            </div>
+            <div class="seventyper">
+                <textarea id="details" name="details" placeholder="Write something.." minlength="10" required></textarea>
+            </div>
+
+            <div class="thirtyper">
+                <label for="where">Where: </label>
+            </div>
+            <div class="seventyper">
+                <input type="text" id="where" name="where" placeholder="Location" required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="date">When: </label>
+            </div>
+            <div class="seventyper">
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="thirtyper">
+                <label for="startTime">Start: </label>
+            </div>
+            <div class="seventyper">
+                <input type="time" id="startTime" name="startTime" value="12:00" required>
+            </div>
+            
+            <div class="thirtyper">
+                <label for="endTime">End: </label>
+            </div>
+            <div class="seventyper">
+                <input type="time" id="endTime" name="endTime" value="12:30" required>
+            </div>
+            
+
+            <div class="thirtyper">
+                <label for="imgUrl">Image Url: </label>
+            </div>
+            <div class="seventyper">
+                <input type="url" id="imgUrl" name="imgUrl" placeholder="http://url" required>
+            </div>
+
+            <div>
+                <input type="submit" value="Create Connection">
+            </div>
+
+        </form>
+    </div>
+    </main>
+
+    <%- include('../partials/footer.ejs')%>

@@ -1,0 +1,30 @@
+<%- include('../partials/htmlInit.ejs') %>
+    <title>Connections</title>
+</head>
+<%- include('../partials/header.ejs')%>
+    <main>
+        <section>
+            <% 
+            if(Object.keys(connections).length <= 0){ %>
+            <article> Please Add some connections first...<a href='/connections/new'>New Connection</a></article>
+            <% }
+            else{
+                Object.keys(connections).forEach(function (key) { %>
+            <article>
+                <h2><%=key %></h2>
+                <ul>
+                    <% for(var i=0; i < connections[key].length; i++) {  %>
+                        <li>
+                            <a href="/connections/<%=connections[key][i]._id %>">
+                                <%=connections[key][i].connectionName %>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </article>
+            <% })
+            }
+            %>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs')%>
